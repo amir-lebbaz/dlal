@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد ميلاد دلال (هوتي) 🎂🎉</title>
+    <style>
+        /* الخلفية الليلية المتحركة */
+        body {
+            background: linear-gradient(to bottom, #232526, #414345);
+            color: #f1f1f1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* القمر */
+        .moon {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #f4f4f4 30%, #bbb 70%);
+            border-radius: 50%;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            to { box-shadow: 0 0 50px rgba(255, 255, 255, 1); }
+        }
+
+        /* النجوم المتحركة */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            width: 4px;
+            height: 4px;
+            background: white;
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 3s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from { opacity: 0.5; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.5); }
+        }
+
+        /* المحتوى الرئيسي */
+        .content {
+            margin-top: 200px;
+            font-size: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight {
+            color: #a29bfe;
+            font-weight: bold;
+        }
+
+        /* تأثير التلميحات المخفية */
+        .hidden-message {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hidden-message:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: #000;
+        }
+
+        .revealed {
+            display: block !important;
+        }
+
+        /* تحقيقات الجريمة - أسلوب الكشف */
+        .mystery-box {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .mystery-btn {
+            background: #a29bfe;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .mystery-btn:hover {
+            background: #6c5ce7;
+        }
+
+        /* عناصر تفاعلية */
+        .interactive-elements {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .interactive-elements button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .interactive-elements button:hover {
+            background-color: #ff4c4c;
+        }
+        body {
+    background: linear-gradient(to bottom, #232526, #414345);
+    color: #f1f1f1;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* لمنع التمرير الأفقي فقط */
+    overflow-y: auto; /* السماح بالتمرير العمودي */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="moon"></div>
+    <div class="stars"></div>
+
+    <div class="content">
+        <h1>🎉 عيد ميلاد سعيد يا دلال (هوتي)! 🎂</h1>
+        <p>من سلالة الورود 💐.. عمركِ اليوم يصبح 18! كل عام وأنتِ بألف خير 💖</p>
+        <p>تحب <span class="highlight">القطط، الأطفال، القهوة، الورود</span></p>
+        <p>تعشق <span class="highlight">الفضاء، القمر، النجوم، الليل، الهدوء</span></p>
+        <p>تحب البحث، التحقيقات، الألغاز والتفسيرات العميقة</p>
+        <p>لونها المفضل <span class="highlight">الرمادي</span></p>
+        <p>رقمها المفضل هو <span class="highlight">3</span></p>
+
+        <!-- تحقيقات الجريمة - لغز يمكن كشفه -->
+        <div class="hidden-message" onclick="revealMystery()">
+            اضغط هنا لكشف شيء غامض 🔍
+        </div>
+
+        <div class="mystery-box" id="mystery">
+            <p>🎭 "الأشياء لا تكون كما تبدو دائمًا... أحيانًا تحتاج إلى النظر بعمق أكثر!"</p>
+        </div>
+
+        <button class="mystery-btn" onclick="revealMystery()">كشف اللغز</button>
+
+        <!-- عناصر تفاعلية -->
+        <div class="interactive-elements">
+            <button onclick="showMessage()">رسالة مفاجئة</button>
+            <button onclick="addCats()">إضافة قطط</button>
+            <button onclick="addRoses()">إضافة ورود</button>
+            <button onclick="addMoon()">إضافة قمر</button>
+            <button onclick="addSpaceElements()">إضافة عناصر فضائية</button>
+            <button onclick="startInvestigation()">بدء تحقيق</button>
+            <button onclick="addNightScene()">إضافة مشهد ليلي</button>
+            <button onclick="addCoffee()">إضافة قهوة</button>
+            <button onclick="addNumber3()">إضافة الرقم 3</button>
+            <button onclick="addCalmScene()">إضافة مشهد هادئ</button>
+        </div>
+    </div>
+
+    <audio id="birthdayMusic" loop autoplay>
+        <source src="happy-birthday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // تشغيل الموسيقى تلقائيًا
+        const audio = document.getElementById("birthdayMusic");
+        audio.play();
+
+        // وظيفة التحكم بالموسيقى
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        // توليد النجوم عشوائيًا
+        function createStars() {
+            const starContainer = document.querySelector('.stars');
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+                starContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        // كشف التلميح المخفي عند النقر
+        function revealMystery() {
+            document.getElementById("mystery").style.display = "block";
+        }
+
+        // عناصر تفاعلية
+        function showMessage() {
+            alert('🎉 مفاجئة! أتمنى لكِ يومًا سعيدًا مليئًا بالفرح! 🎂');
+        }
+
+        function addCats() {
+            const cat = document.createElement('div');
+            cat.classList.add('star');
+            cat.innerHTML = '🐱';
+            cat.style.left = Math.random() * 100 + 'vw';
+            cat.style.top = Math.random() * 100 + 'vh';
+            cat.style.fontSize = '30px';
+            document.querySelector('.stars').appendChild(cat);
+            setTimeout(() => {
+                cat.remove();
+            }, 5000);
+        }
+
+        function addRoses() {
+            const rose = document.createElement('div');
+            rose.classList.add('star');
+            rose.innerHTML = '💐';
+            rose.style.left = Math.random() * 100 + 'vw';
+            rose.style.top = Math.random() * 100 + 'vh';
+            rose.style.fontSize = '30px';
+            document.querySelector('.stars').appendChild(rose);
+            setTimeout(() => {
+                rose.remove();
+            }, 5000);
+        }
+
+        function addMoon() {
+            const moon = document.createElement('div');
+            moon.classList.add('star');
+            moon.innerHTML = '🌕';
+            moon.style.left = Math.random() * 100 + 'vw';
+            moon.style.top = Math.random() * 100 + 'vh';
+            moon.style.fontSize = '40px';
+            document.querySelector('.stars').appendChild(moon);
+            setTimeout(() => {
+                moon.remove();
+            }, 5000);
+        }
+
+        function addSpaceElements() {
+            const elements = ['🚀', '🪐', '👽', '🌌', '☄️'];
+            const element = document.createElement('div');
+            element.classList.add('star');
+            element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.top = Math.random() * 100 + 'vh';
+            element.style.fontSize = '30px';
+            document.querySelector('.stars').appendChild(element);
+            setTimeout(() => {
+                element.remove();
+            }, 5000);
+        }
+
+        function startInvestigation() {
+            const clues = ['🔍', '🕵️‍♀️', '📜', '🔐', '🕶️'];
+            const clue = document.createElement('div');
+            clue.classList.add('star');
+            clue.innerHTML = clues[Math.floor(Math.random() * clues.length)];
+            clue.style.left = Math.random() * 100 + 'vw';
+            clue.style.top = Math.random() * 100 + 'vh';
+            clue.style.fontSize = '30px';
+            document.querySelector('.stars').appendChild(clue);
+            setTimeout(() => {
+                clue.remove();
+            }, 5000);
+        }
+
+        function addNightScene() {
+            const night = document.createElement('div');
+            night.classList.add('star');
+            night.innerHTML = '🌃';
+            night.style.left = Math.random() * 100 + 'vw';
+            night.style.top = Math.random() * 100 + 'vh';
+            night.style.fontSize = '40px';
+            document.querySelector('.stars').appendChild(night);
+            setTimeout(() => {
+                night.remove();
+            }, 5000);
+        }
+
+        function addCoffee() {
+            const coffee = document.createElement('div');
+            coffee.classList.add('star');
+            coffee.innerHTML = '☕';
+            coffee.style.left = Math.random() * 100 + 'vw';
+            coffee.style.top = Math.random() * 100 + 'vh';
+            coffee.style.fontSize = '30px';
+            document.querySelector('.stars').appendChild(coffee);
+            setTimeout(() => {
+                coffee.remove();
+            }, 5000);
+        }
+
+        function addNumber3() {
+            const number3 = document.createElement('div');
+            number3.classList.add('star');
+            number3.innerHTML = '3️⃣';
+            number3.style.left = Math.random() * 100 + 'vw';
+            number3.style.top = Math.random() * 100 + 'vh';
+            number3.style.fontSize = '40px';
+            document.querySelector('.stars').appendChild(number3);
+            setTimeout(() => {
+                number3.remove();
+            }, 5000);
+        }
+
+        function addCalmScene() {
+            const calm = document.createElement('div');
+            calm.classList.add('star');
+            calm.innerHTML = '🍃';
+            calm.style.left = Math.random() * 100 + 'vw';
+            calm.style.top = Math.random() * 100 + 'vh';
+            calm.style.fontSize = '40px';
+            document.querySelector('.stars').appendChild(calm);
+            setTimeout(() => {
+                calm.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
